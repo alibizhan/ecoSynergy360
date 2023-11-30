@@ -162,11 +162,11 @@ else:  # Calculator section
     import streamlit as st
     import pandas as pd
 
-    st.set_page_config(
-        page_title="ecoSynergy360",
-        page_icon="icons8-arrows-around-circle-64.png",
-        #layout="wide",
-    )
+    # st.set_page_config(
+    #     page_title="ecoSynergy360",
+    #     page_icon="icons8-arrows-around-circle-64.png",
+    #     #layout="wide",
+    # )
     # Title and introductory text for the first page
     # st.title('WELCOME TO THE ECOSYNERGY360 PLATFORM ON SUSTAINABILITY ASSESSMENT')
     # st.markdown(
