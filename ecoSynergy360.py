@@ -91,9 +91,27 @@
 # #     else:  # Construction Phase
 # #         # Add functionality for the Construction Phase calculations
 # #         pass
-
 import streamlit as st
 import pandas as pd
+
+# Sample data for the regression coefficients
+data = {
+    'Coefficients': [0.010080678, 0.088990197],
+    'Standard Error': [0.011865215, 4.86342E-05],
+    't Stat': [0.849599284, 1829.786459],
+    'P-value': [0.428140311, 1.79845E-18],
+    'Lower 95%': [-0.018952458, 0.088871194],
+    'Upper 95%': [0.039113815, 0.089109201],
+    'Lower 95,0%': [-0.018952458, 0.088871194],
+    'Upper 95,0%': [0.039113815, 0.089109201]
+}
+
+# Creating a DataFrame from the data
+df = pd.DataFrame(data, index=['Intercept', 'X Variable 1'])
+
+# Displaying the table using Streamlit
+st.table(df)
+
 
 # Sample coefficients data
 data = {
