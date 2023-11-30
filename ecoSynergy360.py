@@ -124,6 +124,7 @@ if selected_section == "Sustainability":
         ...
         """
     )
+    st.image("digital-screen-with-environment-day.jpg", width=400)
     # Add more content for Sustainability section...
 
 elif selected_section == "Life Cycle Assessment":
