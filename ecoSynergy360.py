@@ -1,16 +1,5 @@
 import streamlit as st
 
-# Define custom CSS for styling the buttons
-button_style = """
-    background-color: #f63366;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    margin-right: 10px;
-    cursor: pointer;
-"""
-
 # Title and introductory text for the first page
 st.title('WELCOME TO THE ECOSYNERGY360 PLATFORM ON SUSTAINABILITY ASSESSMENT')
 st.markdown(
@@ -23,8 +12,26 @@ st.write("---")
 
 st.title("Select a Section")
 
+# Define custom CSS for styling the buttons
+button_style = """
+    <style>
+    .button-style {
+        background-color: #f63366;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    </style>
+"""
+
+# Display the custom CSS style
+st.markdown(button_style, unsafe_allow_html=True)
+
 # Create buttons for different sections in the main page
-if st.button("Sustainability", help="Explore Sustainability", key="sustainability_button", style=button_style):
+if st.button("Sustainability", help="Explore Sustainability", key="sustainability_button", class_="button-style"):
     st.title("Sustainability Context")
     st.markdown(
         """
@@ -34,7 +41,7 @@ if st.button("Sustainability", help="Explore Sustainability", key="sustainabilit
     )
     # Add more content for Sustainability section...
 
-if st.button("Life Cycle Assessment", help="Explore Life Cycle Assessment", key="lca_button", style=button_style):
+if st.button("Life Cycle Assessment", help="Explore Life Cycle Assessment", key="lca_button", class_="button-style"):
     st.title("Life Cycle Assessment")
     st.markdown(
         """
@@ -44,7 +51,7 @@ if st.button("Life Cycle Assessment", help="Explore Life Cycle Assessment", key=
     )
     # Add more content for LCA section...
 
-if st.button("Carbon Footprint", help="Explore Carbon Footprint", key="carbon_footprint_button", style=button_style):
+if st.button("Carbon Footprint", help="Explore Carbon Footprint", key="carbon_footprint_button", class_="button-style"):
     st.title("Carbon Footprint")
     st.markdown(
         """
@@ -54,7 +61,7 @@ if st.button("Carbon Footprint", help="Explore Carbon Footprint", key="carbon_fo
     )
     # Add more content for Carbon Footprint section...
 
-if st.button("Calculator", help="Explore Calculator", key="calculator_button", style=button_style):
+if st.button("Calculator", help="Explore Calculator", key="calculator_button", class_="button-style"):
     st.title("Calculator")
     phase = st.radio("Choose the phase of your project", ("Production phase", "Construction Phase"))
     # Add functionality for the Calculator section...
