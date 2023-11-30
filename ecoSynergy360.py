@@ -144,8 +144,9 @@ elif selected_section == "Carbon Footprint":
         In the realm of sustainable practices, the concept of a "carbon footprint" has emerged as a crucial metric in assessing the environmental impact of human activities.
         ...
         """
-        st.image("view-green-forest-trees-with-co2.jpg")
+        
     )
+    st.image("view-green-forest-trees-with-co2.jpg")
     # Add more content for Carbon Footprint section...
 
 else:  # Calculator section
