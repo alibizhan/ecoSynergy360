@@ -30,8 +30,8 @@ button_style = """
 # Display the custom CSS style
 st.markdown(button_style, unsafe_allow_html=True)
 
-# Create buttons for different sections in the main page
-if st.button("Sustainability", help="Explore Sustainability", key="sustainability_button", class_="button-style"):
+# Create buttons for different sections in the main page using HTML
+if "<button class='button-style' onclick='Sustainability()'>Sustainability</button>":
     st.title("Sustainability Context")
     st.markdown(
         """
@@ -41,7 +41,7 @@ if st.button("Sustainability", help="Explore Sustainability", key="sustainabilit
     )
     # Add more content for Sustainability section...
 
-if st.button("Life Cycle Assessment", help="Explore Life Cycle Assessment", key="lca_button", class_="button-style"):
+if "<button class='button-style' onclick='LifeCycleAssessment()'>Life Cycle Assessment</button>":
     st.title("Life Cycle Assessment")
     st.markdown(
         """
@@ -51,7 +51,7 @@ if st.button("Life Cycle Assessment", help="Explore Life Cycle Assessment", key=
     )
     # Add more content for LCA section...
 
-if st.button("Carbon Footprint", help="Explore Carbon Footprint", key="carbon_footprint_button", class_="button-style"):
+if "<button class='button-style' onclick='CarbonFootprint()'>Carbon Footprint</button>":
     st.title("Carbon Footprint")
     st.markdown(
         """
@@ -61,28 +61,33 @@ if st.button("Carbon Footprint", help="Explore Carbon Footprint", key="carbon_fo
     )
     # Add more content for Carbon Footprint section...
 
-if st.button("Calculator", help="Explore Calculator", key="calculator_button", class_="button-style"):
+if "<button class='button-style' onclick='Calculator()'>Calculator</button>":
     st.title("Calculator")
-    phase = st.radio("Choose the phase of your project", ("Production phase", "Construction Phase"))
     # Add functionality for the Calculator section...
 
 
-##else:  # Calculator section
-    ##st.title("Calculator")
-    ##phase = st.radio("Choose the phase of your project", ("Production phase", "Construction Phase"))
+# if st.button("Calculator", help="Explore Calculator", key="calculator_button", class_="button-style"):
+#     st.title("Calculator")
+#     phase = st.radio("Choose the phase of your project", ("Production phase", "Construction Phase"))
+#     # Add functionality for the Calculator section...
 
-    if phase == "Production phase":
-        asphalt_type = st.radio("Choose the type of your asphalt", ("Standard Hot Mix Asphalt", "HMA with RAP"))
-        # Add more selection choices for asphalt type and temperature...
-        if asphalt_type == "Standard Hot Mix Asphalt":
-            pass
-            # Display result for Standard HMA based on selected temperature
-            # Show the calculated CO2 emissions and details
-            # Example: st.write(f"The total amount of CO2 for this asphalt with identifying 180 Celsius temperature in aggregate heating is...")
-        else:
-            pass# HMA with RAP
-            # Display result for HMA with RAP similar to Standard HMA
-            # Show the calculated CO2 emissions and details
-    else:  # Construction Phase
-        # Add functionality for the Construction Phase calculations
-        pass
+
+# ##else:  # Calculator section
+#     ##st.title("Calculator")
+#     ##phase = st.radio("Choose the phase of your project", ("Production phase", "Construction Phase"))
+
+#     if phase == "Production phase":
+#         asphalt_type = st.radio("Choose the type of your asphalt", ("Standard Hot Mix Asphalt", "HMA with RAP"))
+#         # Add more selection choices for asphalt type and temperature...
+#         if asphalt_type == "Standard Hot Mix Asphalt":
+#             pass
+#             # Display result for Standard HMA based on selected temperature
+#             # Show the calculated CO2 emissions and details
+#             # Example: st.write(f"The total amount of CO2 for this asphalt with identifying 180 Celsius temperature in aggregate heating is...")
+#         else:
+#             pass# HMA with RAP
+#             # Display result for HMA with RAP similar to Standard HMA
+#             # Show the calculated CO2 emissions and details
+#     else:  # Construction Phase
+#         # Add functionality for the Construction Phase calculations
+#         pass
