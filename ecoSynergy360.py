@@ -94,6 +94,14 @@
 import streamlit as st
 import pandas as pd
 
+# Title and introductory text for the first page
+st.title('WELCOME TO THE ECOSYNERGY360 PLATFORM ON SUSTAINABILITY ASSESSMENT')
+st.markdown(
+    """
+    The EPSA is developed by Ecosynergy360 team...
+    """
+)
+
 # Sample data for the regression coefficients
 data = {
     'Coefficients': [0.010080678, 0.088990197],
