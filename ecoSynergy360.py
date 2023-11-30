@@ -1,22 +1,30 @@
 import streamlit as st
 
+# Define custom CSS for styling the buttons
+button_style = """
+    background-color: #f63366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+"""
+
 # Title and introductory text for the first page
 st.title('WELCOME TO THE ECOSYNERGY360 PLATFORM ON SUSTAINABILITY ASSESSMENT')
 st.markdown(
     """
-    The EPSA is developed by Ecosynergy360 team, with EUs, UNEP, and UN SDG goals knowledge base that responds to infrastructure sustainability assessment in production and construction phase.
-    ...
+    The EPSA is developed by Ecosynergy360 team...
     """
 )
 
-# Create buttons for different sections
-selected_section = st.sidebar.radio(
-    "Select a section",
-    ("Sustainability", "Life Cycle Assessment", "Carbon Footprint", "Calculator")
-)
+st.write("---")
 
-# Content for different sections
-if selected_section == "Sustainability":
+st.title("Select a Section")
+
+# Create buttons for different sections in the main page
+if st.button("Sustainability", help="Explore Sustainability", key="sustainability_button", style=button_style):
     st.title("Sustainability Context")
     st.markdown(
         """
@@ -26,7 +34,7 @@ if selected_section == "Sustainability":
     )
     # Add more content for Sustainability section...
 
-elif selected_section == "Life Cycle Assessment":
+if st.button("Life Cycle Assessment", help="Explore Life Cycle Assessment", key="lca_button", style=button_style):
     st.title("Life Cycle Assessment")
     st.markdown(
         """
@@ -36,7 +44,7 @@ elif selected_section == "Life Cycle Assessment":
     )
     # Add more content for LCA section...
 
-elif selected_section == "Carbon Footprint":
+if st.button("Carbon Footprint", help="Explore Carbon Footprint", key="carbon_footprint_button", style=button_style):
     st.title("Carbon Footprint")
     st.markdown(
         """
@@ -46,9 +54,15 @@ elif selected_section == "Carbon Footprint":
     )
     # Add more content for Carbon Footprint section...
 
-else:  # Calculator section
+if st.button("Calculator", help="Explore Calculator", key="calculator_button", style=button_style):
     st.title("Calculator")
     phase = st.radio("Choose the phase of your project", ("Production phase", "Construction Phase"))
+    # Add functionality for the Calculator section...
+
+
+##else:  # Calculator section
+    ##st.title("Calculator")
+    ##phase = st.radio("Choose the phase of your project", ("Production phase", "Construction Phase"))
 
     if phase == "Production phase":
         asphalt_type = st.radio("Choose the type of your asphalt", ("Standard Hot Mix Asphalt", "HMA with RAP"))
