@@ -168,12 +168,12 @@ st.set_page_config(
     #layout="wide",
 )
 # Title and introductory text for the first page
-st.title('WELCOME TO THE ECOSYNERGY360 PLATFORM ON SUSTAINABILITY ASSESSMENT')
-st.markdown(
-    """
-    The EPSA is developed by Ecosynergy360 team...
-    """
-)
+# st.title('WELCOME TO THE ECOSYNERGY360 PLATFORM ON SUSTAINABILITY ASSESSMENT')
+# st.markdown(
+#     """
+#     The EPSA is developed by Ecosynergy360 team...
+#     """
+# )
 
 # Sample data for the regression coefficients
 data = {
