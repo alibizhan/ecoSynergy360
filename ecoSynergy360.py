@@ -91,3 +91,29 @@ if "<button class='button-style' onclick='Calculator()'>Calculator</button>":
 #     else:  # Construction Phase
 #         # Add functionality for the Construction Phase calculations
 #         pass
+
+import streamlit as st
+import pandas as pd
+
+# Sample coefficients data
+data = {
+    "Coefficients": ["Intercept", "X Variable 1"],
+    "Coeff_Values": [0.010080678, 0.088990197],
+    "Std_Error": [0.011865215, 4.86342E-05]
+}
+coefficients = pd.DataFrame(data)
+
+# Function to calculate CO2
+def calculate_CO2(input_val, coefficients):
+    intercept = coefficients.loc[coefficients['Coefficients'] == 'Intercept', 'Coeff_Values'].values[0]
+    x_variable_coeff = coefficients.loc[coefficients['Coefficients'] == 'X Variable 1', 'Coeff_Values'].values[0]
+    CO2 = x_variable_coeff * input_val + intercept
+    return CO2
+
+# Streamlit app
+st.title('CO2 Calculation')
+
+input_val = st.number_input("Enter the value for X Variable 1:", value=0.0)
+result = calculate_CO2(input_val, coefficients)
+
+st.write(f"The calculated CO2 value is: {result}")
