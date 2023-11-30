@@ -3,7 +3,7 @@ import streamlit as st
 st.set_page_config(
     page_title="ecoSynergy360",
     page_icon="icons8-arrows-around-circle-64.png",
-    #layout="wide",
+    layout="wide",
 )
 
 # # Title and introductory text for the first page
@@ -144,6 +144,7 @@ elif selected_section == "Carbon Footprint":
         In the realm of sustainable practices, the concept of a "carbon footprint" has emerged as a crucial metric in assessing the environmental impact of human activities.
         ...
         """
+        st.image("view-green-forest-trees-with-co2.jpg")
     )
     # Add more content for Carbon Footprint section...
 
