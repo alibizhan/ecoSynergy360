@@ -94,6 +94,11 @@
 import streamlit as st
 import pandas as pd
 
+st.set_page_config(
+    page_title="ecoSynergy360",
+    page_icon="chart_with_upwards_trend",
+    layout="wide",
+)
 # Title and introductory text for the first page
 st.title('WELCOME TO THE ECOSYNERGY360 PLATFORM ON SUSTAINABILITY ASSESSMENT')
 st.markdown(
