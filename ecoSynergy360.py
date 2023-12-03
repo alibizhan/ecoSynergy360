@@ -190,7 +190,7 @@ else:  # Calculator section
             coefficient_intercept = float(data['Coefficients'][0])
 
             co2 = coefficient_x_variable * user_input + coefficient_intercept
-            co2_ = co2+4.53+4.25+7.92+10.2
+            co2_ = co2+4.53+4.25+7.92+10.2-7.426
 
             # Display the calculated CO2
             st.write(f"Calculated CO2: {co2_}")
