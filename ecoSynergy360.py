@@ -141,23 +141,12 @@ st.markdown(
 
 # Create buttons with associated functions and custom classes
 if st.button("Button 1", key="btn1", class_="button-1"):
-    st.markdown(
-    """
-    Welcome to Ecosynergy360, where sustainability is not just a concept but a commitment to securing the needs of the present generation without compromising the essential requirements of the generations to come.
-    ...
-    """
-)
+    pass
         #st.image("digital-screen-with-environment-day.jpg")
     # Add more content for Sustainability section...
 
 if st.button("Button 2", key="btn2", class_="button-2"):
-    st.title("Life Cycle Assessment")
-    st.markdown(
-        """
-        Welcome to Ecosynergy360, where sustainability isn't just a goal but a journey guided by Life Cycle Assessment (LCA), a powerful tool in understanding the holistic impact of projects on our environment.
-        ...
-        """
-    )
+    pass
         #st.image("LCA.png")
 ## hhh
 
