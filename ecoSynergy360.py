@@ -221,7 +221,7 @@ else:  # Calculator section
     # Streamlit app
     st.title('CO2 Calculation')
 
-    input_val = st.number_input("Enter the value for X Variable 1:", value=0.0)
+    input_val = st.number_input("Enter temperature in Celcius :", value=0.0)
     result = calculate_CO2(input_val, coefficients)
 
     st.write(f"The calculated CO2 value is: {result}")
