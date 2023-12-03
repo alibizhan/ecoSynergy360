@@ -201,7 +201,7 @@ else:  # Calculator section
 
 
     # Display the table in Streamlit
-    st.write("Coefficients Table:", df)
+    #st.write("Coefficients Table:", df)
 
     # User input for X Variable
     user_input = st.number_input("Enter the temperature in Celcius:", value=0.0)
