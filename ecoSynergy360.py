@@ -150,68 +150,87 @@ elif selected_section == "Carbon Footprint":
     # Add more content for Carbon Footprint section...
 
 else:  # Calculator section
-    # st.title("Calculator")
-    # phase = st.radio("Choose the phase of your project", ("Production phase", "Construction Phase"))
+    st.title("Calculator")
+    phase = st.radio("Choose the phase of your project", ("Production phase", "Construction Phase"))
 
-    # if phase == "Production phase":
-    #     asphalt_type = st.radio("Choose the type of your asphalt", ("Standard Hot Mix Asphalt", "HMA with RAP"))
-    #     # Add more selection choices for asphalt type and temperature...
-    #     if asphalt_type == "Standard Hot Mix Asphalt":
-    #         pass
-    #         # Display result for Standard HMA based on selected temperature
-    #         # Show the calculated CO2 emissions and details
-    #         # Example: st.write(f"The total amount of CO2 for this asphalt with identifying 180 Celsius temperature in aggregate heating is...")
-    #     else:
-    #         pass# HMA with RAP
-    #         # Display result for HMA with RAP similar to Standard HMA
-    #         # Show the calculated CO2 emissions and details
-    # else:  # Construction Phase
-    #     # Add functionality for the Construction Phase calculations
-    #     pass
-    import streamlit as st
-    import pandas as pd
+    if phase == "Production phase":
+        asphalt_type = st.radio("Choose the type of your asphalt", ("Standard Hot Mix Asphalt", "HMA with RAP"))
+        # Add more selection choices for asphalt type and temperature...
+        if asphalt_type == "Standard Hot Mix Asphalt":
+            import streamlit as st
+            import pandas as pd
 
-    # st.set_page_config(
-    #     page_title="ecoSynergy360",
-    #     page_icon="icons8-arrows-around-circle-64.png",
-    #     #layout="wide",
-    # )
-    # Title and introductory text for the first page
-    # st.title('WELCOME TO THE ECOSYNERGY360 PLATFORM ON SUSTAINABILITY ASSESSMENT')
-    # st.markdown(
-    #     """
-    #     The EPSA is developed by Ecosynergy360 team...
-    #     """
-    # )
+            # Sample data for the regression coefficients
+            data = {
+                'Coefficients': ['-6.142848146', '0.246160952'],
+                'Standard Error': ['0.015849729', '0.000142858'],
+                't Stat': ['-387.5680248', '1723.119208'],
+                'P-value': ['1.99146E-14', '2.57875E-18'],
+                'Lower 95%': ['-6.181631035', '0.245811391'],
+                'Upper 95%': ['-6.104065256', '0.246510512'],
+                'Lower 95,0%': ['-6.181631035', '0.245811391'],
+                'Upper 95,0%': ['-6.104065256', '0.246510512']
+            }
 
-    # Sample data for the regression coefficients
-    data = {
-        'Coefficients': ['-6.142848146', '0.246160952'],
-        'Standard Error': ['0.015849729', '0.000142858'],
-        't Stat': ['-387.5680248', '1723.119208'],
-        'P-value': ['1.99146E-14', '2.57875E-18'],
-        'Lower 95%': ['-6.181631035', '0.245811391'],
-        'Upper 95%': ['-6.104065256', '0.246510512'],
-        'Lower 95,0%': ['-6.181631035', '0.245811391'],
-        'Upper 95,0%': ['-6.104065256', '0.246510512']
-    }
-
-    # Creating a DataFrame from the data
-    df = pd.DataFrame(data, index=['Intercept', 'X Variable 1'])
+            # Creating a DataFrame from the data
+            df = pd.DataFrame(data, index=['Intercept', 'X Variable 1'])
 
 
-    # Display the table in Streamlit
-    #st.write("Coefficients Table:", df)
+            # Display the table in Streamlit
+            #st.write("Coefficients Table:", df)
 
-    # User input for X Variable
-    user_input = st.number_input("Enter the temperature in Celcius:", value=0.0)
+            # User input for X Variable
+            user_input = st.number_input("Enter the temperature in Celcius:", value=0.0)
 
-    # Calculate CO2 using the formula CO2 = Coefficients["X Variable 1"] * Input + Coefficients["Intercept"]
-    coefficient_x_variable = float(data['Coefficients'][1])
-    coefficient_intercept = float(data['Coefficients'][0])
+            # Calculate CO2 using the formula CO2 = Coefficients["X Variable 1"] * Input + Coefficients["Intercept"]
+            coefficient_x_variable = float(data['Coefficients'][1])
+            coefficient_intercept = float(data['Coefficients'][0])
 
-    co2 = coefficient_x_variable * user_input + coefficient_intercept
+            co2 = coefficient_x_variable * user_input + coefficient_intercept
 
-    # Display the calculated CO2
-    st.write(f"Calculated CO2: {co2}")
+            # Display the calculated CO2
+            st.write(f"Calculated CO2: {co2}")
+        else:
+            pass# HMA with RAP
+            # Display result for HMA with RAP similar to Standard HMA
+            # Show the calculated CO2 emissions and details
+    else:  # Construction Phase
+        # Add functionality for the Construction Phase calculations
+        pass
+
+
+
+    # import streamlit as st
+    # import pandas as pd
+
+    # # Sample data for the regression coefficients
+    # data = {
+    #     'Coefficients': ['-6.142848146', '0.246160952'],
+    #     'Standard Error': ['0.015849729', '0.000142858'],
+    #     't Stat': ['-387.5680248', '1723.119208'],
+    #     'P-value': ['1.99146E-14', '2.57875E-18'],
+    #     'Lower 95%': ['-6.181631035', '0.245811391'],
+    #     'Upper 95%': ['-6.104065256', '0.246510512'],
+    #     'Lower 95,0%': ['-6.181631035', '0.245811391'],
+    #     'Upper 95,0%': ['-6.104065256', '0.246510512']
+    # }
+
+    # # Creating a DataFrame from the data
+    # df = pd.DataFrame(data, index=['Intercept', 'X Variable 1'])
+
+
+    # # Display the table in Streamlit
+    # #st.write("Coefficients Table:", df)
+
+    # # User input for X Variable
+    # user_input = st.number_input("Enter the temperature in Celcius:", value=0.0)
+
+    # # Calculate CO2 using the formula CO2 = Coefficients["X Variable 1"] * Input + Coefficients["Intercept"]
+    # coefficient_x_variable = float(data['Coefficients'][1])
+    # coefficient_intercept = float(data['Coefficients'][0])
+
+    # co2 = coefficient_x_variable * user_input + coefficient_intercept
+
+    # # Display the calculated CO2
+    # st.write(f"Calculated CO2: {co2}")
 
