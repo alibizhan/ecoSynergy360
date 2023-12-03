@@ -135,7 +135,7 @@ elif selected_section == "Life Cycle Assessment":
         ...
         """
     )
-    st.image("LCA.jpg")
+    st.image("LCA.png")
     # Add more content for LCA section...
 
 elif selected_section == "Carbon Footprint":
