@@ -201,27 +201,42 @@ else:  # Calculator section
 
     # Displaying the table using Streamlit
     #st.table(df)
+    df = pd.DataFrame(data, index=['Intercept', 'X Variable 1'])
 
+    # Display the table in Streamlit
+    st.write("Coefficients Table:", df)
+
+    # User input for X Variable
+    user_input = st.number_input("Enter the value for X Variable 1:", value=0.0)
+
+    # Calculate CO2 using the formula CO2 = Coefficients["X Variable 1"] * Input + Coefficients["Intercept"]
+    coefficient_x_variable = float(data['Coefficients'][1])
+    coefficient_intercept = float(data['Coefficients'][0])
+
+    co2 = coefficient_x_variable * user_input + coefficient_intercept
+
+    # Display the calculated CO2
+    st.write(f"Calculated CO2: {co2}")
 
     # Sample coefficients data
-    data = {
-        "Coefficients": ["Intercept", "X Variable 1"],
-        "Coeff_Values": [0.010080678, 0.088990197],
-        "Std_Error": [0.011865215, 4.86342E-05]
-    }
-    coefficients = pd.DataFrame(data)
+    # data = {
+    #     "Coefficients": ["Intercept", "X Variable 1"],
+    #     "Coeff_Values": [0.010080678, 0.088990197],
+    #     "Std_Error": [0.011865215, 4.86342E-05]
+    # }
+    # coefficients = pd.DataFrame(data)
 
-    # Function to calculate CO2
-    def calculate_CO2(input_val, coefficients):
-        intercept = coefficients.loc[coefficients['Coefficients'] == 'Intercept', 'Coeff_Values'].values[0]
-        x_variable_coeff = coefficients.loc[coefficients['Coefficients'] == 'X Variable 1', 'Coeff_Values'].values[0]
-        CO2 = x_variable_coeff * input_val + intercept
-        return CO2
+    # # Function to calculate CO2
+    # def calculate_CO2(input_val, coefficients):
+    #     intercept = coefficients.loc[coefficients['Coefficients'] == 'Intercept', 'Coeff_Values'].values[0]
+    #     x_variable_coeff = coefficients.loc[coefficients['Coefficients'] == 'X Variable 1', 'Coeff_Values'].values[0]
+    #     CO2 = x_variable_coeff * input_val + intercept
+    #     return CO2
 
-    # Streamlit app
-    st.title('CO2 Calculation')
+    # # Streamlit app
+    # st.title('CO2 Calculation')
 
-    input_val = st.number_input("Enter temperature in Celcius :", value=0.0)
-    result = calculate_CO2(input_val, coefficients)
+    # input_val = st.number_input("Enter temperature in Celcius :", value=0.0)
+    # result = calculate_CO2(input_val, coefficients)
 
-    st.write(f"The calculated CO2 value is: {result}")
+    # st.write(f"The calculated CO2 value is: {result}")
