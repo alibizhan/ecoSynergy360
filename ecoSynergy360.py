@@ -152,8 +152,10 @@ elif selected_section == "Carbon Footprint":
 
 else:  # Calculator section
     st.title("Calculator")
+    st.markdown("##Step 1:")
     phase = st.radio("Choose the phase of your project", ("Production phase", "Construction Phase"))
 
+    st.markdown("##Step 2:")
     if phase == "Production phase":
         asphalt_type = st.radio("Choose the type of your asphalt", ("Standard Hot Mix Asphalt", "HMA with RAP"))
         # Add more selection choices for asphalt type and temperature...
@@ -179,7 +181,7 @@ else:  # Calculator section
 
             # Display the table in Streamlit
             #st.write("Coefficients Table:", df)
-
+            st.markdown("##Step 3:")
             # User input for X Variable
             user_input = st.number_input("Enter the temperature in Celcius:", value=0.0)
 
