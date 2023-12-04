@@ -101,13 +101,13 @@ st.set_page_config(
 
 
 import streamlit as st
-st.title('WELCOME TO THE ECOSYNERGY360 PLATFORM ON SUSTAINABILITY ASSESSMENT')
-st.markdown(
-    """
-    The EPSA is developed by Ecosynergy360 team, with EUs, UNEP, and UN SDG goals knowledge base that responds to infrastructure sustainability assessment in production and construction phase.
-    ...
-    """
-)
+# st.title('WELCOME TO THE ECOSYNERGY360 PLATFORM ON SUSTAINABILITY ASSESSMENT')
+# st.markdown(
+#     """
+#     The EPSA is developed by Ecosynergy360 team, with EUs, UNEP, and UN SDG goals knowledge base that responds to infrastructure sustainability assessment in production and construction phase.
+#     ...
+#     """
+# )
 
 # Create buttons for different sections
 options = ['Home','Sustainability', 'Life Cycle Assessment', 'Carbon Footprint','Calculator']
