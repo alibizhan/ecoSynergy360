@@ -157,7 +157,7 @@ elif selected_section == "Life Cycle Assessment":
     st.title("Life Cycle Assessment")
     st.markdown(
         """
-        Welcome to Ecosynergy360, where sustainability isn't just a goal but a journey guided by Life Cycle Assessment (LCA), a powerful tool in understanding the holistic impact of projects on our environment.
+        Welcome to Ecosynergy360, where sustainability isn't just a goal but a journey guided by Life Cycle Assessment (LCA), a powerful methodology in understanding the holistic impact of projects on our environment.
         In the ever-evolving landscape of infrastructure projects across Europe, the need for comprehensive assessments has never been more apparent. Are these endeavors aligned with sustainable development goals and the imperative to achieve a zero-carbon footprint?
         Recognizing the diverse methodologies available for assessing sustainability, Ecosynergy360 has chosen to employ Life Cycle Assessment. LCA allows us to go beyond isolated considerations and thoroughly evaluate the environmental impact of projects from inception to completion.
         LCA considers the entire life cycle of a project, encompassing raw material extraction, production, construction, operation, and end-of-life disposal or recycling. This approach enables a comprehensive understanding of the environmental, social, and economic aspects, fostering informed decision-making.
